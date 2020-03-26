@@ -10,7 +10,6 @@ fs.access('solved',error => {
     console.log(`Las carpetas nivel 1,2 y 3 fueron creadas con éxito`);
 
     // Una vez creadas las carpetas... empezar a mover los archivos
-
     const files = fs.readdirSync('temp');
     // console.log(files);
 
@@ -26,17 +25,12 @@ fs.access('solved',error => {
         fs.renameSync(`temp/${file}`, `solved/level3/${file}`);
       }
     })
-
     console.log('Se movieron los archivos!');
+
     // Borrar la carpeta temp
-
     fs.rmdirSync('temp')
-
-    
 
   } else {
     console.log('La carpeta solved ya existe');
   }
 })
-
-// console.log('')
