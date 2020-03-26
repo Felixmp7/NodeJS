@@ -29,8 +29,8 @@ fs.access('solved',error => {
 
     console.log('Se movieron los archivos!');
     // Borrar la carpeta temp
-    fs.unlinkSync('temp');
-    console.log('Carpeta temp borrada')
+
+    fs.rmdirSync('temp')
 
     
 
