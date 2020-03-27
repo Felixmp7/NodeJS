@@ -24,7 +24,34 @@ const server = http.createServer( (llamado, response) => {
     } catch (error) {
       console.log(error);
     }
-  } else {
+  }
+  else if (llamado.url.match(/.css$/)){
+    try {
+      const content = fs.readFileSync(`.${llamado.url}`, "UTF-8");
+      // console.log(content);
+
+      response.writeHead(200, {
+        "Content-Type": "text/css"
+      });
+      response.end(content);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  else if (llamado.url.match(/.png$/)){
+    try {
+      const content = fs.readFileSync(`.${llamado.url}`);
+      // console.log(content);
+
+      response.writeHead(200, {
+        "Content-Type": "image/gif"
+      });
+      response.end(content);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  else {
     response.writeHead(404, {
       "Content-Type": "text/html"
     });
