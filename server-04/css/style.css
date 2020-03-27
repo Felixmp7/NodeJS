@@ -1,0 +1,19 @@
+html, body {
+    height: 100%;
+}
+
+body, h2 {
+    margin: 0;
+}
+
+body {
+    justify-content: center;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(3, 12, 26);
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
