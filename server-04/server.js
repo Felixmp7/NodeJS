@@ -10,14 +10,20 @@ const port = '9000';
 
 const server = http.createServer( (llamado, response) => {
   // Investigar primer parámetro que recibe createServer
-  console.log(llamado)
+  // console.log(llamado)
   if (llamado.url == '/') {
-    fs.readFile('./index.html', 'UTF-8', (error,content) => {
+    try {
+      const content = fs.readFileSync('./index.html', 'UTF-8')
+      // console.log(content);
+      
       response.writeHead(200, {
         "Content-Type": "text/html"
       });
       response.end(content);
-    })
+      
+    } catch (error) {
+      console.log(error);
+    }
   } else {
     response.writeHead(404, {
       "Content-Type": "text/html"
