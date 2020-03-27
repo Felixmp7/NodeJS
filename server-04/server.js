@@ -8,6 +8,10 @@ const port = '9000';
 // Para crear un servidor, simplemente utilizamos el método createServer que recibe un callback
 
 const server = http.createServer( (llamado, response) => {
+  // Investigar primer parámetro que recibe createServer
+
+
+  
   // Lo que quiero que el server responda
   response.writeHead(200, {
     'Content-Type': 'text/html'
